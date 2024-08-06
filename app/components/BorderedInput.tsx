@@ -39,7 +39,6 @@ const ShowPassword = styled.button`
 const BorderedInput = (props: InputHTMLAttributes<HTMLInputElement>) => {
   const isPassword = props.type === "password";
   const [isShow, setIsShow] = useState(false);
-  console.log(EyeIcon);
   return (
     <Container>
       <BorderedInputStyle {...props} type={isShow ? "text" : props.type} />
