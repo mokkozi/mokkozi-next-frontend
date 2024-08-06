@@ -1,9 +1,9 @@
 "use client";
 
-import StyledComponentsRegistry from "./lib/registry";
+import StyledComponentsRegistry from "lib/registry";
 import { ThemeProvider } from "styled-components";
-import "./globals.css";
-import theme from "./constants/theme";
+import "globals.css";
+import theme from "constants/theme";
 
 export default function RootLayout({
   children
