@@ -3,6 +3,7 @@
 import { InputHTMLAttributes, useState } from "react";
 import styled from "styled-components";
 import EyeIcon from "../svgs/eye.svg";
+import theme from "../constants/theme";
 
 const Container = styled.div`
   position: relative;
@@ -11,14 +12,14 @@ const Container = styled.div`
 
 const BorderedInputStyle = styled.input`
   box-sizing: border-box;
-  border: 1px solid #ccc;
+  border: 1px solid ${(props) => props.theme.colors.darkWhite};
   border-radius: 5px;
   padding: 12px;
-  font-size: 12px;
+  font-size: ${(props) => props.theme.fonts.size.small};
   width: 100%;
   &:focus {
     outline: none;
-    border: 1px solid #fc9700;
+    border: 1px solid ${(props) => props.theme.colors.highlight};
   }
 `;
 
@@ -44,7 +45,9 @@ const BorderedInput = (props: InputHTMLAttributes<HTMLInputElement>) => {
       <BorderedInputStyle {...props} type={isShow ? "text" : props.type} />
       {isPassword && (
         <ShowPassword onClick={(e) => setIsShow((prev) => !prev)}>
-          <EyeIcon fill={isShow ? "#FC9700" : "#CCCCCC"} />
+          <EyeIcon
+            fill={isShow ? theme.colors.highlight : theme.colors.darkWhite}
+          />
         </ShowPassword>
       )}
     </Container>

@@ -1,5 +1,9 @@
+"use client";
+
 import StyledComponentsRegistry from "./lib/registry";
+import { ThemeProvider } from "styled-components";
 import "./globals.css";
+import theme from "./constants/theme";
 
 export default function RootLayout({
   children
@@ -9,7 +13,9 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <ThemeProvider theme={theme}>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        </ThemeProvider>
       </body>
     </html>
   );
