@@ -44,7 +44,7 @@ const BorderedInput = (props: InputHTMLAttributes<HTMLInputElement>) => {
     <Container>
       <BorderedInputStyle {...props} type={isShow ? "text" : props.type} />
       {isPassword && (
-        <ShowPassword onClick={(e) => setIsShow((prev) => !prev)}>
+        <ShowPassword type="button" onClick={(e) => setIsShow((prev) => !prev)}>
           <EyeIcon
             fill={isShow ? theme.colors.highlight : theme.colors.darkWhite}
           />
