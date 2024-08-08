@@ -1,0 +1,16 @@
+name: Test
+on: push
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+      - name: npm install
+        run: npm install --frozen-lockfile
+      - name: run test code
+        run: npm run test
+    
