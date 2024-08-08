@@ -27,8 +27,8 @@ export default function LoginPage() {
       <WallPaperContainer>
         <Title>로그인</Title>
         <SubTitle>서비스 이용시 로그인이 필요합니다</SubTitle>
-        <BorderedInput placeholder="이메일" type="email" name="loginId" />
-        <BorderedInput placeholder="비밀번호" type="password" name="password" />
+        <BorderedInput required placeholder="이메일" type="email" name="loginId" />
+        <BorderedInput required placeholder="비밀번호" type="password" name="password" />
         <Container width="100%" justify="end">
           <SubTitle>
             <Bold>비밀번호</Bold>를 잊으셨나요?

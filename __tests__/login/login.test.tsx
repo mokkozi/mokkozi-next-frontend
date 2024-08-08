@@ -17,6 +17,12 @@ describe("로그인 페이지", () => {
     expect(screen.getByRole("button", { name: "로그인" })).toBeInTheDocument();
   });
 
+  it("required 속성 확인", () => {
+    render(<LoginPage />);
+    expect(screen.getByPlaceholderText("이메일")).toHaveAttribute("required");
+    expect(screen.getByPlaceholderText("비밀번호")).toHaveAttribute("required");
+  })
+
   it("로그인 성공 시 메인 페이지로 이동 및 로컬스토리지에 토큰 저장", async () => {
     axiosMock.onPost("/api/members/login").reply(200, { data: "token" });
 
