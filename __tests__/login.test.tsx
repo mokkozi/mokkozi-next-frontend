@@ -12,14 +12,14 @@ describe("로그인 페이지", () => {
   it("필수 요소 렌더링 확인", () => {
     render(<LoginPage />);
     expect(screen.getByRole("heading", { name: "로그인" })).toBeInTheDocument();
-    expect(screen.getByPlaceholderText("이메일")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("아이디")).toBeInTheDocument();
     expect(screen.getByPlaceholderText("비밀번호")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "로그인" })).toBeInTheDocument();
   });
 
   it("required 속성 확인", () => {
     render(<LoginPage />);
-    expect(screen.getByPlaceholderText("이메일")).toHaveAttribute("required");
+    expect(screen.getByPlaceholderText("아이디")).toHaveAttribute("required");
     expect(screen.getByPlaceholderText("비밀번호")).toHaveAttribute("required");
   })
 
@@ -28,7 +28,7 @@ describe("로그인 페이지", () => {
 
     render(<LoginPage />);
 
-    const loginId = screen.getByPlaceholderText("이메일");
+    const loginId = screen.getByPlaceholderText("아이디");
     const password = screen.getByPlaceholderText("비밀번호");
     const submitButton = screen.getByRole("button", { name: "로그인" });
 
@@ -47,7 +47,7 @@ describe("로그인 페이지", () => {
 
     render(<LoginPage />);
 
-    const loginId = screen.getByPlaceholderText("이메일");
+    const loginId = screen.getByPlaceholderText("아이디");
     const password = screen.getByPlaceholderText("비밀번호");
     const submitButton = screen.getByRole("button", { name: "로그인" });
 
