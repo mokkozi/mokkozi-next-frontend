@@ -2,8 +2,8 @@
 
 import { InputHTMLAttributes, useState } from "react";
 import styled from "styled-components";
-import EyeIcon from "../svgs/eye.svg";
-import theme from "../constants/theme";
+import EyeIcon from "@/svgs/eye.svg";
+import theme from "@/constants/theme";
 
 const Container = styled.div`
   position: relative;

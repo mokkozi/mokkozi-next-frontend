@@ -1,5 +1,5 @@
 import { AxiosResponse } from "axios";
-import { APIResponse } from "interfaces/api";
+import { APIResponse } from "@/interfaces/api";
 
 export interface ILoginBody {
   loginId: string;

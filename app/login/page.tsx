@@ -1,12 +1,12 @@
 "use client";
 
-import { Bold, SubTitle, Title } from "components/Typo";
-import { PrimaryButton } from "components/Button";
-import Container, { WallPaperContainer } from "components/Container";
-import BorderedInput from "components/BorderedInput";
-import formToObject from "utils/formToObject";
-import { postLogin } from "@/api/membersAPI";
 import { useRouter } from "next/navigation";
+import { Bold, SubTitle, Title } from "@/components/Typo";
+import { PrimaryButton } from "@/components/Button";
+import Container, { WallPaperContainer } from "@/components/Container";
+import BorderedInput from "@/components/BorderedInput";
+import formToObject from "@/utils/formToObject";
+import { postLogin } from "@/api/membersAPI";
 
 export default function LoginPage() {
   const router = useRouter();

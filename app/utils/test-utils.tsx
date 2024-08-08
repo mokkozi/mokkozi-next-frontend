@@ -2,9 +2,9 @@
 import React, { ReactNode } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
-import theme from 'constants/theme';
+import theme from '@/constants/theme';
 import MockAdapter from 'axios-mock-adapter';
-import axiosInstance from 'api/axiosInstance';
+import axiosInstance from '@/api/axiosInstance';
 
 // Mock axios instance
 const mock = new MockAdapter(axiosInstance);
