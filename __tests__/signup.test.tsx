@@ -55,9 +55,7 @@ describe("회원가입 페이지", () => {
     fireEvent.submit(submitButton);
 
     await waitFor(() => {
-      setTimeout(() => {
-        expect(window.location.pathname).toBe("/login");
-      }, 10);
+      expect(window.location.pathname).toBe("/login");
     });
   });
 });
