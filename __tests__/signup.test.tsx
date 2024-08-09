@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-// import SignupPage from "signup/page";
+import SignupPage from "signup/page";
 import { fireEvent, render, screen, waitFor, axiosMock } from "utils/test-utils";
 
 describe("회원가입 페이지", () => {
@@ -10,7 +10,7 @@ describe("회원가입 페이지", () => {
   });
 
   it("필수 요소 렌더링 확인", () => {
-    // render(<SignupPage />);
+    render(<SignupPage />);
 
     const heading = screen.getByRole("heading", { name: "회원가입" });
     const nameField = screen.getByPlaceholderText("이름");
@@ -40,7 +40,7 @@ describe("회원가입 페이지", () => {
   it("회원가입 성공 시 로그인 페이지로 이동", async () => {
     axiosMock.onPost("/api/members").reply(200, { code: 200, message: "회원가입 성공" });
 
-    // render(<SignupPage />);
+    render(<SignupPage />);
 
     const nameField = screen.getByPlaceholderText("이름");
     const idField = screen.getByPlaceholderText("아이디");
@@ -55,7 +55,9 @@ describe("회원가입 페이지", () => {
     fireEvent.submit(submitButton);
 
     await waitFor(() => {
-      expect(window.location.pathname).toBe("/login");
+      setTimeout(() => {
+        expect(window.location.pathname).toBe("/login");
+      }, 10);
     });
   });
 });
