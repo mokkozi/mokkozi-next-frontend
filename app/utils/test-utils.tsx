@@ -7,7 +7,7 @@ import MockAdapter from 'axios-mock-adapter';
 import axiosInstance from '@/api/axiosInstance';
 
 // Mock axios instance
-const mock = new MockAdapter(axiosInstance);
+const axiosMock = new MockAdapter(axiosInstance);
 
 // Mock localStorage
 const localStorageMock = (function () {
@@ -38,5 +38,11 @@ const AllProviders = ({ children }: { children: ReactNode }) => {
 const customRender = (ui: React.ReactElement, options?: Omit<RenderOptions, 'queries'>) =>
   render(ui, { wrapper: AllProviders, ...options });
 
+
+const pushMock = jest.fn();
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn()
+}));
+
 export * from '@testing-library/react';
-export { customRender as render, mock as axiosMock };
+export { customRender as render, axiosMock, pushMock };

@@ -1,12 +1,18 @@
 import "@testing-library/jest-dom";
+import { useRouter } from "next/navigation";
 import SignupPage from "signup/page";
-import { fireEvent, render, screen, waitFor, axiosMock } from "utils/test-utils";
+import { fireEvent, render, screen, waitFor, axiosMock, pushMock } from "utils/test-utils";
+
 
 describe("회원가입 페이지", () => {
+
   beforeEach(() => {
     localStorage.clear();
     axiosMock.reset();
     window.alert = jest.fn();
+    (useRouter as jest.Mock).mockReturnValue({
+      push: pushMock
+    });
   });
 
   it("필수 요소 렌더링 확인", () => {
@@ -55,7 +61,7 @@ describe("회원가입 페이지", () => {
     fireEvent.submit(submitButton);
 
     await waitFor(() => {
-      expect(window.location.pathname).toBe("/login");
+      expect(pushMock).toHaveBeenCalledWith("/login");
     });
   });
 });
