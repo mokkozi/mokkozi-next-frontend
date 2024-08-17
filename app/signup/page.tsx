@@ -8,6 +8,7 @@ import BorderedInput from "@/components/BorderedInput";
 import formToObject from "@/utils/formToObject";
 import { postSignup } from "@/api/membersAPI";
 import { ROUTES_LOGIN } from "@/constants/routes";
+import Link from "next/link";
 
 export default function SignupPage() {
   const router = useRouter();
@@ -34,7 +35,7 @@ export default function SignupPage() {
         <BorderedInput required placeholder="비밀번호 확인" type="password" name="passwordConfirm" minLength={6} maxLength={20} />
         <PrimaryButton type="submit">회원가입</PrimaryButton>
         <SubTitle>
-          이미 회원이신가요? <Bold>로그인</Bold>
+          이미 회원이신가요? <Link href={ROUTES_LOGIN}><Bold>로그인</Bold></Link>
         </SubTitle>
       </WallPaperContainer>
     </form>

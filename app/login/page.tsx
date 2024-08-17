@@ -7,7 +7,8 @@ import Container, { WallPaperContainer } from "@/components/Container";
 import BorderedInput from "@/components/BorderedInput";
 import formToObject from "@/utils/formToObject";
 import { postLogin } from "@/api/membersAPI";
-import { ROUTES_HOME } from "@/constants/routes";
+import { ROUTES_HOME, ROUTES_SIGNUP } from "@/constants/routes";
+import Link from "next/link";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -40,7 +41,7 @@ export default function LoginPage() {
          */}
         <PrimaryButton type="submit">로그인</PrimaryButton>
         <SubTitle>
-          계정이 아직 없으신가요? <Bold>회원가입</Bold>
+          계정이 아직 없으신가요? <Link href={ROUTES_SIGNUP}><Bold>회원가입</Bold></Link>
         </SubTitle>
       </WallPaperContainer>
     </form>
