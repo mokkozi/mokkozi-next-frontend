@@ -1,12 +1,16 @@
 import "@testing-library/jest-dom";
 import LoginPage from "login/page";
-import { fireEvent, render, screen, waitFor, axiosMock } from "utils/test-utils";
+import { useRouter } from "next/navigation";
+import { fireEvent, render, screen, waitFor, axiosMock, pushMock } from "utils/test-utils";
 
 describe("로그인 페이지", () => {
   beforeEach(() => {
     localStorage.clear();
     axiosMock.reset();
     window.alert = jest.fn();
+    (useRouter as jest.Mock).mockReturnValue({
+      push: pushMock
+    });
   });
 
   it("필수 요소 렌더링 확인", () => {
@@ -38,7 +42,7 @@ describe("로그인 페이지", () => {
 
     await waitFor(() => {
       expect(localStorage.getItem("accessToken")).toBe("token");
-      expect(window.location.pathname).toBe("/");
+      expect(pushMock).toHaveBeenCalledWith("/");
     });
   });
 
