@@ -7,6 +7,7 @@ import { WallPaperContainer } from "@/components/Container";
 import BorderedInput from "@/components/BorderedInput";
 import formToObject from "@/utils/formToObject";
 import { postSignup } from "@/api/membersAPI";
+import { ROUTES_LOGIN } from "@/constants/routes";
 
 export default function SignupPage() {
   const router = useRouter();
@@ -17,7 +18,7 @@ export default function SignupPage() {
 
     try {
       const response = await postSignup(name, loginId, password, passwordConfirm);
-      router.push("/login");
+      router.push(ROUTES_LOGIN);
     } catch (error) {
       alert("회원가입에 실패했습니다.");
     }

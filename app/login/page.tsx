@@ -7,6 +7,7 @@ import Container, { WallPaperContainer } from "@/components/Container";
 import BorderedInput from "@/components/BorderedInput";
 import formToObject from "@/utils/formToObject";
 import { postLogin } from "@/api/membersAPI";
+import { ROUTES_HOME } from "@/constants/routes";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -17,7 +18,7 @@ export default function LoginPage() {
     try {
       const response = await postLogin(body.loginId, body.password);
       localStorage.setItem("accessToken", response.data);
-      router.push("/");
+      router.push(ROUTES_HOME);
     } catch (error) {
       alert("로그인에 실패했습니다.");
     }

@@ -1,3 +1,4 @@
+import { ROUTES_HOME } from "@/constants/routes";
 import "@testing-library/jest-dom";
 import LoginPage from "login/page";
 import { useRouter } from "next/navigation";
@@ -42,7 +43,7 @@ describe("로그인 페이지", () => {
 
     await waitFor(() => {
       expect(localStorage.getItem("accessToken")).toBe("token");
-      expect(pushMock).toHaveBeenCalledWith("/");
+      expect(pushMock).toHaveBeenCalledWith(ROUTES_HOME);
     });
   });
 

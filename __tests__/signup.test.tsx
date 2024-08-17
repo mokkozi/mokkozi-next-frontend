@@ -1,3 +1,4 @@
+import { ROUTES_LOGIN } from "@/constants/routes";
 import "@testing-library/jest-dom";
 import { useRouter } from "next/navigation";
 import SignupPage from "signup/page";
@@ -61,7 +62,7 @@ describe("회원가입 페이지", () => {
     fireEvent.submit(submitButton);
 
     await waitFor(() => {
-      expect(pushMock).toHaveBeenCalledWith("/login");
+      expect(pushMock).toHaveBeenCalledWith(ROUTES_LOGIN);
     });
   });
 });
