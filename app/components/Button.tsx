@@ -26,6 +26,7 @@ const ToggleButtonInput = styled.input`
 `;
 
 const ToggleButtonStyle = styled.div`
+  text-align: center;
   font-size: ${(props) => props.theme.fonts.size.medium};
   background-color: ${(props) => props.theme.colors.white};
   padding: 10px;
@@ -42,7 +43,10 @@ const ToggleButtonStyle = styled.div`
 export const ToggleButton = (props: InputHTMLAttributes<HTMLInputElement>) => {
   const { style, children, ...rest } = props;
   return (
-    <ToggleButtonContainer>
+    <ToggleButtonContainer style={{
+      width: style?.width,
+      height: style?.height,
+    }}>
       <ToggleButtonInput type="checkbox" {...rest} />
       <ToggleButtonStyle style={style}>{children}</ToggleButtonStyle>
     </ToggleButtonContainer>
