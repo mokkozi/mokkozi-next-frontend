@@ -30,11 +30,14 @@ export default function LoginPage() {
         <SubTitle>서비스 이용시 로그인이 필요합니다</SubTitle>
         <BorderedInput required placeholder="아이디" type="text" name="loginId" />
         <BorderedInput required placeholder="비밀번호" type="password" name="password" />
+        {/* 비밀번호 찾기 기능 개발 시 주석 해제 예정 */}
+        {/* 
         <Container width="100%" justify="end">
           <SubTitle>
             <Bold>비밀번호</Bold>를 잊으셨나요?
           </SubTitle>
         </Container>
+         */}
         <PrimaryButton type="submit">로그인</PrimaryButton>
         <SubTitle>
           계정이 아직 없으신가요? <Bold>회원가입</Bold>
