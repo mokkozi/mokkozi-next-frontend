@@ -12,6 +12,7 @@ import MenuIcon from '@/svgs/menu.svg';
 import PeopleIcon from '@/svgs/people.svg';
 import PersonIcon from '@/svgs/person.svg';
 import PlusIcon from '@/svgs/plus.svg';
+import SearchIcon from '@/svgs/search.svg';
 import ShareIcon from '@/svgs/share.svg';
 
 export default {
@@ -29,5 +30,6 @@ export default {
   People: PeopleIcon,
   Person: PersonIcon,
   Plus: PlusIcon,
+  Search: SearchIcon,
   Share: ShareIcon,
 }
