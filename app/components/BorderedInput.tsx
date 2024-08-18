@@ -2,8 +2,8 @@
 
 import { InputHTMLAttributes, useState } from "react";
 import styled from "styled-components";
-import EyeIcon from "@/svgs/eye.svg";
 import theme from "@/constants/theme";
+import Icon from "./Icon";
 
 const Container = styled.div`
   position: relative;
@@ -45,7 +45,7 @@ const BorderedInput = (props: InputHTMLAttributes<HTMLInputElement>) => {
       <BorderedInputStyle {...props} type={isShow ? "text" : props.type} />
       {isPassword && (
         <ShowPassword type="button" onClick={(e) => setIsShow((prev) => !prev)}>
-          <EyeIcon
+          <Icon.Eye
             fill={isShow ? theme.colors.highlight : theme.colors.darkWhite}
           />
         </ShowPassword>
