@@ -18,3 +18,12 @@ export const SubTitle = styled.h2`
 export const Bold = styled.span`
   font-weight: ${(props) => props.theme.fonts.weight.bold};
 `;
+
+export const IconText = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  font-size: ${(props) => props.theme.fonts.size.xs};
+  color: ${(props) => props.theme.colors.gray};
+`;
