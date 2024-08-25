@@ -52,3 +52,24 @@ export const ToggleButton = (props: InputHTMLAttributes<HTMLInputElement>) => {
     </ToggleButtonContainer>
   )
 }
+
+export const FloatingButton = styled.button`
+  position: fixed;
+  bottom: 120px;
+  right: 20px;
+  background-color: ${(props) => props.theme.colors.highlight};
+  color: ${(props) => props.theme.colors.white};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 17px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+`;
+
+export default {
+  Primary: PrimaryButton,
+  Toggle: ToggleButton,
+  Floating: FloatingButton,
+}
